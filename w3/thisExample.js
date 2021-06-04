@@ -25,6 +25,10 @@ architect.prototype.outputNameDelay2 = function () {
 var architect1 = new architect("Joe", 34);
 var architect2 = new architect("Mary", 49);
 
+architect.prototype.newMethod = function() {
+    return "Hello: " + this.name;
+}
+
 console.log(architect1.name);
 console.log(architect2.name);
 
@@ -32,3 +36,6 @@ console.log(architect2.name);
 // object, we end up with “undefined” being output to the console
 architect2.outputNameDelay(); // outputs undefined
 architect2.outputNameDelay2(); // outputs undefined
+
+console.log(Object.getPrototypeOf(architect2));
+console.log(architect2.newMethod());
